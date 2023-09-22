@@ -8,7 +8,7 @@ pipeline {
             steps {
                 script {
                     // Start or restart the PM2 process and capture the PID
-                    def pm2Output = sh(script: "pm2 start /var/www/html/pm2.json")
+                    def pm2Output = sh(script: "pm2 start /home/digitech/pm2.json")
 
                     // Save the PID to a file for future reference (optional)
 
