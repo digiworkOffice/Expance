@@ -4,7 +4,7 @@ pipeline {
         stage('Copy File to Destination') {
             steps {
                 script {
-                    sh "pm2 restart 0"
+                    sh "pm2 restart /var/www/html/pm2.json"
                 }
             }
         }
