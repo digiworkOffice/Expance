@@ -3,25 +3,7 @@ pipeline {
        environment {
         localServerDir = '/home/digitech/server_new/server'
     }
-    stages {  
-        stage('install npm') {
-            steps {                
-                    sh "npm i -f"
-            }
-}
- stage('Deploy to Local Server') {
-            steps {  
-                sh "rm -rf ${localServerDir}/*"
-   
-                sh "cp -r * ${localServerDir}"
-
- 
-                 echo "content copied to ${localServerDir}"
-            }
-        }
-
-   
-   
+    stages {    
         stage('Pm2 start') {
             steps {
                 script {
