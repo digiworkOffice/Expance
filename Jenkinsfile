@@ -8,8 +8,8 @@ pipeline {
             steps {
                 script {
                     // Start or restart the PM2 process and capture the PID
-                   // sh "cd /var/www/html/server && pm2 start ./server.js"
-                    sh "pm2 ls"
+                    sh "pm2 start /var/www/html/server/pm2.js"
+                    // sh "pm2 ls"
 
                 }
             }
