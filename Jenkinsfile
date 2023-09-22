@@ -8,8 +8,11 @@ pipeline {
             steps {
                 script {
                     // Start or restart the PM2 process and capture the PID
-                    def pm2Output = sh(script: "pm2 start /var/www/html/pm2.json", returnStatus: true, returnStdout: true)
-                    def pid = pm2Output.trim() // Trim any leading/trailing whitespace
+                    def pm2Output = sh(script: "pm2 start /var/www/html/pm2.json", returnStatus: true, returnStdout: true).trim()
+                    def pid = pm2Output
+
+                    // Save the PID to a file for future reference (optional)
+                    writeFile file: '/var/www/html/pm2_pid.txt', text: pid
 
                     // Print the PID to the console
                     echo "PM2 process started with PID: $pid"
