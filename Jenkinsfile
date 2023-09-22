@@ -11,11 +11,8 @@ stage('install npm') {
 }
        
         stage('Deploy to Local Server') {
-            steps {  
-                sh "rm -rf ${localServerDir}/*"
-   
+            steps {     
                 sh "cp -r * ${localServerDir}"
-
                  echo "content copied to ${localServerDir}"
             }
         }
