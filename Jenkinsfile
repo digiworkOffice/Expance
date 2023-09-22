@@ -3,19 +3,7 @@ pipeline {
     environment {
         localServerDir = '/var/www/html/server'
     }
-    stages {
-stage('install npm') {
-            steps {                
-                    sh "npm i -f"
-            }
-}
-       
-        stage('Deploy to Local Server') {
-            steps {     
-                sh "cp -r * ${localServerDir}"
-                 echo "content copied to ${localServerDir}"
-            }
-        }
+    stages {  
      stage('Pm2 start') {
             steps {
                 script {
