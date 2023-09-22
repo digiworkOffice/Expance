@@ -21,7 +21,7 @@ pipeline {
         }
 
    
-   }
+   
         stage('Pm2 start') {
             steps {
                 script {
